@@ -1,5 +1,5 @@
 # My Journal - Coding Challenge
-
+Built on a modified version of my [react-fullstack-starter](https://github.com/rvillanueva/react-fullstack-starter) boilerplate. Additional commits added within a two hour limit.
 
 ## Viewing Instructions
 Visit the app at [journal-code-challenge.herokuapp.com](https://journal-code-challenge.herokuapp.com/), or set up development environment below.
