@@ -1,16 +1,27 @@
-# React Fullstack Starter
+# My Journal - Coding Challenge
 
-1. **One command to get started** - Type `npm start` to start development in your default browser.
-2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
-3. **One command line to check** - All feedback is displayed on a single command line.
-4. **No more JavaScript fatigue** - Slingshot uses the most popular and powerful libraries for working with React.
-5. **Prebuilt authentication** - Authentication comes built in with the expandability of [Passport.js](http://www.passportjs.org/).
-6. **Automated production build** - Type `npm run build`
 
-## Get Started
+## Viewing Instructions
+Visit the app at [journal-code-challenge.herokuapp.com](https://journal-code-challenge.herokuapp.com/), or set up development environment below.
+
+## Biggest Challenge
+I think the biggest risk in this process was moving the app from development to production environments. While I fortunately started early with the boilerplate, there were several pieces of legacy code that I had forgotten to strip that caused problems when deploying into the production environment.
+
+## What I Learned
+
+If I'm planning on building a strong foundation on top of an old codebase, make sure it is sufficiently tested and there are safeguards to detect and diagnose production failures.
+
+## What I Would Have Done Differently
+
+Clean my boilerplate properly! More broadly, I think there's a related lesson about not being afraid to delete old code (it's saved in git!) rather than commenting it out in case you might need it later. It reduces complexity of your code and reduces the likelihood of unintended side effects.
+
+
+## Get Started - Development
 1. **Initial Machine Setup**. First time running the starter kit? Then complete the [Initial Machine Setup](https://github.com/coryhouse/react-slingshot#initial-machine-setup).
-2. **Clone the project**. `git clone https://github.com/rvillanueva/react-fullstack-starter.git`.
-3. **Run the example app**. `npm start -s`
+2. **Clone the project**. `git clone https://github.com/rvillanueva/journal-code-challenge.git`.
+3. **Install dependencies**. `yarn install`
+4. **Setup redis and postgres** Make sure you're running redis and postgres on your local machine.
+4. **Run the example app**. `yarn run dev`
 This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, this command will continue watching all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
 4. **Having issues?** See "Having Issues?" below.
 
@@ -18,7 +29,7 @@ This will run the automated build process, start up a webserver, and open the ap
 1. **Install [Node 4.0.0 or greater](https://nodejs.org)** - (5.0 or greater is recommended for optimal build performance). Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
 2. **Install [Git](https://git-scm.com/downloads)**.
 3. **Install [Watchman](https://facebook.github.io/watchman/docs/install.html)**.
-4. **Install [Mongodb](https://www.mongodb.com/)**. Make sure it's running in the background.
+4. **Install [Postgres](https://www.postgresql.org/)**. Make sure it's running in the background.
 5. **[Disable safe write in your editor](https://webpack.js.org/guides/development/#adjusting-your-text-editor)** to assure hot reloading works properly.
 6. On a Mac? You're all set. If you're on Linux or Windows, complete the steps for your OS below.  
 
@@ -33,8 +44,8 @@ This will run the automated build process, start up a webserver, and open the ap
 * **Install C++ Compiler**. Browser-sync requires a C++ compiler on Windows. [Visual Studio Express](https://www.visualstudio.com/en-US/products/visual-studio-express-vs) comes bundled with a free C++ compiler. Or, if you already have Visual Studio installed: Open Visual Studio and go to File -> New -> Project -> Visual C++ -> Install Visual C++ Tools for Windows Desktop. The C++ compiler is used to compile browser-sync (and perhaps other Node modules).
 
 ## Having Issues? Try these things first.
-1. Make sure you ran all steps in [Get started](https://github.com/coryhouse/react-slingshot/blob/master/README.md#get-started) including the [initial machine setup](https://github.com/coryhouse/react-slingshot#initial-machine-setup).
-2. Run `npm install` - If you forget to do this, you'll see this: `babel-node: command not found`.
+1. Make sure you ran all steps in get started including the initial machine startup.
+2. Run `yarn install` - If you forget to do this, you'll see this: `babel-node: command not found`.
 3. Install the latest version of Node. Or install [Node 5.12.0](https://nodejs.org/download/release/v5.12.0/) if you're having issues on Windows. Node 6 has issues on some Windows machines.
 4. Make sure files with names that begin with a dot (.babelrc, .editorconfig, .eslintrc) are copied to the project directory root. This is easy to overlook if you copy this repository manually.
 5. Don't run the project from a symbolic link. It may cause issues with file watches.
