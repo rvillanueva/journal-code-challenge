@@ -66,13 +66,9 @@ class ComposePage extends React.Component {
 }
 
 ComposePage.propTypes = {
-  createEntry: PropTypes.func.isRequired
+  createEntry: PropTypes.func.isRequired,
+  goTo: PropTypes.func.isRequired
 };
-
-function mapStateToProps(state) {
-  return {
-  };
-}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -82,6 +78,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(ComposePage);

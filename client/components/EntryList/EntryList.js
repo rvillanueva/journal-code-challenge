@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import './entry-list.scss';
-
+import {Link} from 'react-router-dom';
 
 class EntryList extends React.Component {
   renderEntry(entry) {
-    return <div className="entry-list__item">
+    return <Link key={entry._id} className="entry-list__item" to={`/entries/${entry._id}`}>
       <div className="entry-list__item__date">
         <div className="entry-list__item__date__month">
           {moment(entry.date).format('MMM')}
@@ -19,7 +19,7 @@ class EntryList extends React.Component {
         <p className="entry-list__item__text__title">{entry.title}</p>
         <p className="entry-list__item__text__teaser">{entry.body.substring(0, 120)}</p>
       </div>
-    </div>;
+    </Link>;
   }
   render() {
     return (

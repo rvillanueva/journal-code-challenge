@@ -9,6 +9,7 @@ import AdminPage from './Admin/AdminPage';
 import NotFoundPage from './NotFoundPage';
 import SettingsPage from './Settings/SettingsPage';
 import HomePage from './Home/HomePage';
+import EntryPage from './Entry/EntryPage';
 import ComposePage from './Compose/ComposePage';
 import PasswordResetRequestPage from './PasswordResetRequest/PasswordResetRequestPage';
 import PasswordResetSuccessPage from './PasswordResetSuccess/PasswordResetSuccessPage';
@@ -45,6 +46,7 @@ class App extends React.Component {
                     <Switch>
                       <Route path="/admin" component={AdminPage} />
                       <Route path="/settings" component={SettingsPage} />
+                      <Route path="/entries/:entryId" exact component={EntryPage}/>
                       <Route path="/create" exact component={ComposePage}/>
                       <Route path="/" exact component={HomePage}/>
                       <Route component={NotFoundPage} />

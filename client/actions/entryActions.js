@@ -27,7 +27,7 @@ export function getById(id) {
       });
       dispatch({
         type: types.MERGE_ENTRIES,
-        items: [data.entries]
+        items: [data.entry]
       });
     } catch(e) {
       console.error(e);

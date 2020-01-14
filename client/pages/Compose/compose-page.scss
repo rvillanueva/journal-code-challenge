@@ -8,12 +8,21 @@
     border: none;
     font-size: 2em;
     margin-bottom: 8px;
+    color: $text-color;
+    &::placeholder {
+      color: $text-color-muted;
+    }
   }
   & .compose__body-input {
     width: 100%;
     border: none;
     height: 400px;
     font-size: 1.1em;
+    outline: none;
+    color: $text-color;
+    &::placeholder {
+      color: $text-color-muted;
+    }
   }
   & .compose__save-button-container {
     text-align: right;

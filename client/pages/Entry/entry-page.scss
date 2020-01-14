@@ -1,2 +1,12 @@
 @import '../../styles/_variables';
 @import '../../styles/_mixins';
+
+.entry-page__title {
+  padding: 8px 0;
+  font-size: 2em;
+  margin-bottom: 8px;
+}
+
+.entry-page__body {
+  font-size: 1.1em;
+}
