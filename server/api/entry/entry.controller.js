@@ -10,7 +10,7 @@
 
 'use strict';
 
-import {Thing} from '../../sqldb';
+import {Post} from '../../sqldb';
 import {respondWithError, respondWithResult} from '../responses';
 import omit from 'object.omit';
 import {applyPatch} from '../../utils/patch';
@@ -25,7 +25,7 @@ export function handleError(res, statusCode) {
 // Gets a list of Business Entries
 export async function index(req, res, next) {
   try {
-    const things = await Thing.findAll({
+    const things = await Post.findAll({
       where: {
         userId: req.user._id
       }
@@ -40,7 +40,7 @@ export async function index(req, res, next) {
 // Gets a single Business from the DB
 export async function show(req, res, next) {
   try {
-    const thing = await Thing.findOne({
+    const thing = await Post.findOne({
       where: {
         _id: req.params.thingId,
         userId: req.user._id
@@ -57,7 +57,7 @@ export async function show(req, res, next) {
 export async function create(req, res) {
   try {
     const {body} = req;
-    const thing = await Thing.create(body);
+    const thing = await Post.create(body);
     return respondWithResult(res, {
       thing
     });
@@ -69,7 +69,7 @@ export async function create(req, res) {
 export async function patch(req, res) {
   try {
     const updateData = omit(req.body, ['_id', 'userId']);
-    const thing = await Thing.findOne({
+    const thing = await Post.findOne({
       where: {
         _id: req.params.thingId,
         userId: req.user._id
@@ -88,7 +88,7 @@ export async function patch(req, res) {
 
 export async function destroy(req, res) {
   try {
-    const thing = await Thing.findOne({
+    const thing = await Post.findOne({
       where: {
         _id: req.params.thingId,
         userId: req.user._id

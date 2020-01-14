@@ -16,3 +16,4 @@ export AddressInput from './AddressInput/AddressInput';
 export OptionsButton from './OptionsButton/OptionsButton';
 export NavbarSide from './NavbarSide/NavbarSide';
 export SignupForm from './SignupForm/SignupForm';
+export EntryList from './EntryList/EntryList';

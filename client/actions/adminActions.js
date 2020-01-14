@@ -24,11 +24,6 @@ export function changeUserRole(userId, newRole) {
   };
 }
 
-export function chargeDailyPayments() {
-  return async function() {
-    return axios.post('/api/jobs/payments');
-  };
-}
 
 export function deleteUser(userId) {
   return async function(dispatch) {
@@ -43,21 +38,6 @@ export function deleteUser(userId) {
       });
     } catch(err) {
       console.error(err);
-    }
-  };
-}
-
-export function getAllCompanies() {
-  return async function(dispatch) {
-    try {
-      const {data: items} = await axios.get('/api/accounts/');
-      dispatch({
-        type: types.MERGE_ACCOUNTS,
-        items
-      });
-      return items;
-    } catch(e) {
-      console.error(e);
     }
   };
 }

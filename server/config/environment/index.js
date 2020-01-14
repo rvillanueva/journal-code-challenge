@@ -32,8 +32,7 @@ var all = {
   // Should we populate the DB with sample data?
   seedDB: false,
   secrets: {
-    session: process.env.SESSION_SECRET,
-    tokenEncryption: process.env.TOKEN_ENCRYPTION_SECRET
+    session: process.env.SESSION_SECRET
   },
   aws: {
     region: process.env.AWS_REGION || 'us-east-1',

@@ -11,7 +11,7 @@ import config from './config/environment';
 export default function(app) {
   // Insert routes below
   app.use('/api/users', require('./api/user'));
-  app.use('/api/things', require('./api/thing'));
+  app.use('/api/entries', require('./api/entry'));
 
   app.use('/auth', require('./auth').default);
 

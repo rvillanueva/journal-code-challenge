@@ -10,6 +10,7 @@ export default {
     drawerIsOpen: false
   },
   users: initializeNormalState(),
+  entries: initializeNormalState(),
   overlay: {
     isVisible: false,
     type: null,

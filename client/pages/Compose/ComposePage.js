@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import './home-page.scss';
-import {selectAllEntries} from '../../selectors';
 import {bindActionCreators} from 'redux';
-import {getAll as getAllEntries} from '../../actions/entryActions';
-import {EntryList} from '../../components/';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -26,30 +23,21 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="page-body">
-        <div className="content-container">
-          <div className="new-post">
-            test
-          </div>
-          <EntryList entries={this.props.entries} />
-        </div>
       </div>
     );
   }
 }
 
 HomePage.propTypes = {
-  entries: PropTypes.array
 };
 
 function mapStateToProps(state) {
   return {
-    entries: selectAllEntries(state)
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getAllEntries: bindActionCreators(getAllEntries, dispatch)
   };
 }
 

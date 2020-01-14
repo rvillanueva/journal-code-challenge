@@ -14,5 +14,7 @@ export {Sequelize};
 export const sequelize = new Sequelize(config.sequelize.uri, config.sequelize);
 
 export const User = sequelize.import('../api/user/user.model');
-export const Thing = sequelize.import('../api/thing/thing.model');
+export const Entry = sequelize.import('../api/entry/entry.model');
 export const Session = sequelize.import('./session/session.model');
+
+Entry.belongsTo(User);
