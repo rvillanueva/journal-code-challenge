@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 import moment from 'moment';
 import emailer from '../../email';
 import PasswordResetEmail from '../../email/components/PasswordReset/PasswordResetEmail';
-import {sendEmailVerification, handlePostRegistrationExternalServices} from './user.service';
+//import {sendEmailVerification, handlePostRegistrationExternalServices} from './user.service';
 import {applyPatch} from '../../utils/patch';
 import {respondWithError} from '../responses';
 const Op = Sequelize.Op;
@@ -54,18 +54,18 @@ export async function create(req, res, next) {
     if(!user) {
       user = User.build({
         provider: 'local',
-        role: 'unverified'
+        role: 'user'
       });
     }
     user.set('password', password);
     user.set('email', email);
     user.set('name', name);
     user = await user.save();
-    await sendEmailVerification(user.get('_id'));
+    //await sendEmailVerification(user.get('_id'));
     const token = jwt.sign({ _id: user._id }, config.secrets.session, {
       expiresIn: 60 * 60 * 5
     });
-    await handlePostRegistrationExternalServices(user);
+    //await handlePostRegistrationExternalServices(user);
     return res.json({ token });
   } catch(e) {
     if(e.name === 'SequelizeValidationError') {
