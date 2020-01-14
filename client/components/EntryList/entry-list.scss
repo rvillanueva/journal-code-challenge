@@ -1,9 +1,47 @@
 @import "../../styles/_variables";
 
 .entry-list {
-
-}
-
-.entry-list__item {
-  
+ & .entry-list__item {
+   display: flex;
+   flex-direction: row;
+   margin: 0 -72px;
+   padding: 24px;
+   border-radius: 6px;
+   &:hover {
+     box-shadow: $card-box-shadow-heavy;
+     cursor: pointer;
+   }
+   & .entry-list__item__date {
+     width: 80px;
+     padding: 0 24px;
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     box-sizing: content-box;
+     color: rgb(102, 102, 102);
+     & .entry-list__item__date__month {
+       font-size: 1.15em;
+       font-weight: bold;
+       text-transform: uppercase;
+     }
+     & .entry-list__item__date__day {
+       font-size: 2em;
+       padding-top: 4px;
+       font-weight: 100;
+     }
+   }
+   & .entry-list__item__text {
+     padding-top: 4px;
+     & .entry-list__item__text__title {
+       font-size: 1.15em;
+       margin: 0;
+     }
+     & .entry-list__item__text__teaser {
+       font-size: 1em;
+       color: $text-color-muted;
+       margin: 0;
+       padding-left: 1px;
+     }
+   }
+ }
 }

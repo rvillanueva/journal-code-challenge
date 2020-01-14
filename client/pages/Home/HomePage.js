@@ -17,6 +17,7 @@ class HomePage extends React.Component {
   }
   async componentDidMount() {
     try {
+      await this.props.getAllEntries();
       this.setState({
         isLoaded: true
       });
@@ -28,8 +29,8 @@ class HomePage extends React.Component {
     return (
       <div className="page-body">
         <div className="content-container">
-          <Link className="new-post" to="/create">
-            New post here
+          <Link className="create-entry-link" to="/create">
+            Create new entry
           </Link>
           <EntryList entries={this.props.entries} />
         </div>
@@ -39,7 +40,8 @@ class HomePage extends React.Component {
 }
 
 HomePage.propTypes = {
-  entries: PropTypes.array
+  entries: PropTypes.array.isRequired,
+  getAllEntries: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
