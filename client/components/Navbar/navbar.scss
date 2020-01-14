@@ -59,11 +59,15 @@ $navbar-profile-width: 230px;
   }
 
   & .navbar__logo__container {
-    display: inline-block;
     margin-right: 18px;
-    padding-top: 12px;
     height: 100%;
-    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
     & .navbar__logo {
       height: 26px;
     }
@@ -76,11 +80,25 @@ $navbar-profile-width: 230px;
       color: $primary-accent;
       display: inline-block;
     }
+    & .navbar__logo__text {
+      display: block;
+      font-size: 1.7em;
+      line-height: 1em;
+      margin-top: 4px;
+      font-weight: bold;
+      height: 26px;
+      color: $text-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
   & .navbar__pages__container {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: 32px;
-    vertical-align: top;
   }
   & .navbar-group-center {
     flex: 1;
@@ -88,7 +106,9 @@ $navbar-profile-width: 230px;
   & .navbar-group-left {
     position: relative;
     text-align: left;
-    width: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
   }
   & .navbar-group-right {
     position: relative;

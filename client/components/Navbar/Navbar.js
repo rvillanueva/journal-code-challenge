@@ -23,7 +23,7 @@ class Navbar extends React.Component {
             <FontAwesomeIcon icon="bars" />
           </button>
           <Link className="navbar__logo__container dropdown__option" to="/">
-            <img className="navbar__logo" src={logo} />
+            <div className="navbar__logo__text">My Journal</div>
           </Link>
         </div>
         <div className="navbar-group-center">
