@@ -9,6 +9,7 @@ import AdminPage from './Admin/AdminPage';
 import NotFoundPage from './NotFoundPage';
 import SettingsPage from './Settings/SettingsPage';
 import HomePage from './Home/HomePage';
+import ComposePage from './Compose/ComposePage';
 import PasswordResetRequestPage from './PasswordResetRequest/PasswordResetRequestPage';
 import PasswordResetSuccessPage from './PasswordResetSuccess/PasswordResetSuccessPage';
 import PasswordResetPage from './PasswordReset/PasswordResetPage';
@@ -21,7 +22,6 @@ import {CSSTransition} from 'react-transition-group';
 
 class App extends React.Component {
   render() {
-    if(process.env.NODE_ENV !== 'development') return null;
     const {isAuthenticated} = this.props;
     return this.props.isLoaded
       ? <ErrorBoundary>
@@ -45,6 +45,7 @@ class App extends React.Component {
                     <Switch>
                       <Route path="/admin" component={AdminPage} />
                       <Route path="/settings" component={SettingsPage} />
+                      <Route path="/create" exact component={ComposePage}/>
                       <Route path="/" exact component={HomePage}/>
                       <Route component={NotFoundPage} />
                     </Switch>

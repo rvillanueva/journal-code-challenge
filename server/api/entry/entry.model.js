@@ -1,7 +1,7 @@
 'use strict';
 
 export default function(sequelize, DataTypes) {
-  const Post = sequelize.define('post', {
+  const Entry = sequelize.define('entry', {
     _id: {
       primaryKey: true,
       type: DataTypes.UUID,
@@ -26,5 +26,5 @@ export default function(sequelize, DataTypes) {
     }
   });
 
-  return Post;
+  return Entry;
 }

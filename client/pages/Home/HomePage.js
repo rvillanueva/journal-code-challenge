@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import './home-page.scss';
 import {selectAllEntries} from '../../selectors';
 import {bindActionCreators} from 'redux';
@@ -27,9 +28,9 @@ class HomePage extends React.Component {
     return (
       <div className="page-body">
         <div className="content-container">
-          <div className="new-post">
-            test
-          </div>
+          <Link className="new-post" to="/create">
+            New post here
+          </Link>
           <EntryList entries={this.props.entries} />
         </div>
       </div>

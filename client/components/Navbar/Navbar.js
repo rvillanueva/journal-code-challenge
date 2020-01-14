@@ -27,7 +27,6 @@ class Navbar extends React.Component {
           </Link>
         </div>
         <div className="navbar-group-center">
-          <SearchBar />
         </div>
         <div className="navbar-group-right">
           <div className="pseudo-full-height" />

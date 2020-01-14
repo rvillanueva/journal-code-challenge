@@ -10,7 +10,7 @@
 
 'use strict';
 
-import {Post} from '../../sqldb';
+import {Entry} from '../../sqldb';
 import {respondWithError, respondWithResult} from '../responses';
 import omit from 'object.omit';
 import {applyPatch} from '../../utils/patch';
@@ -25,12 +25,12 @@ export function handleError(res, statusCode) {
 // Gets a list of Business Entries
 export async function index(req, res, next) {
   try {
-    const things = await Post.findAll({
+    const entries = await Entry.findAll({
       where: {
         userId: req.user._id
       }
     });
-    return res.status(200).json({ things });
+    return res.status(200).json({ entries });
   } catch(e) {
     return next(e);
   }
@@ -40,14 +40,14 @@ export async function index(req, res, next) {
 // Gets a single Business from the DB
 export async function show(req, res, next) {
   try {
-    const thing = await Post.findOne({
+    const entry = await Entry.findOne({
       where: {
-        _id: req.params.thingId,
+        _id: req.params.entryId,
         userId: req.user._id
       }
     });
-    if(!thing) return res.status(403).end();
-    return res.status(200).json({ thing });
+    if(!entry) return res.status(403).end();
+    return res.status(200).json({ entry });
   } catch(e) {
     return next(e);
   }
@@ -57,9 +57,12 @@ export async function show(req, res, next) {
 export async function create(req, res) {
   try {
     const {body} = req;
-    const thing = await Post.create(body);
+    const entry = await Entry.create({
+      userId: req.user._id,
+      ...body
+    });
     return respondWithResult(res, {
-      thing
+      entry
     });
   } catch(err) {
     return respondWithError(res, err);
@@ -69,17 +72,17 @@ export async function create(req, res) {
 export async function patch(req, res) {
   try {
     const updateData = omit(req.body, ['_id', 'userId']);
-    const thing = await Post.findOne({
+    const entry = await Entry.findOne({
       where: {
-        _id: req.params.thingId,
+        _id: req.params.entryId,
         userId: req.user._id
       }
     });
-    if(!thing) return res.status(403).end();
-    applyPatch(thing, updateData);
-    await thing.save();
+    if(!entry) return res.status(403).end();
+    applyPatch(entry, updateData);
+    await entry.save();
     return respondWithResult(res, {
-      thing
+      entry
     });
   } catch(err) {
     return respondWithError(res, err);
@@ -88,14 +91,14 @@ export async function patch(req, res) {
 
 export async function destroy(req, res) {
   try {
-    const thing = await Post.findOne({
+    const entry = await Entry.findOne({
       where: {
-        _id: req.params.thingId,
+        _id: req.params.entryId,
         userId: req.user._id
       }
     });
-    if(!thing) return res.status(403).end();
-    await thing.destroy();
+    if(!entry) return res.status(403).end();
+    await entry.destroy();
     return res.status(200).end();
   } catch(err) {
     return respondWithError(res, err);
