@@ -1,0 +1,22 @@
+@import '../../../../styles/_variables';
+@import '../../../../styles/_mixins';
+
+.search-bar {
+  background-color: darken(desaturate($background-gradient-start, 30), 2);
+  border-radius: 5px;
+  height: 36px;
+  font-size: 14px;
+  padding: 8px 16px;
+  width: 560px;
+  color: $text-color;
+  margin: 7px 12px 0 12px;
+  font-weight: 300;
+  &::placeholder {
+    color: $text-color-muted;
+    font-size: 0.9em;
+  }
+}
+
+.search-bar-container {
+  text-align: center;
+}

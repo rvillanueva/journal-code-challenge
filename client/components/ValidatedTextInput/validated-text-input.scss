@@ -1,0 +1,19 @@
+@import "../../styles/_variables";
+
+.validated-text-input {
+  position: relative;
+  & input.validated-text-input__input--invalid {
+    border-color: lighten($danger-accent, 15) !important;
+  }
+  & .validated-text-input__icon {
+    position: absolute;
+    right: 8px;
+    top: 2px;
+    &.validated-text-input__icon--invalid {
+      color: $danger-accent;
+    }
+    &.validated-text-input__icon--valid {
+      color: $success-accent;
+    }
+  }
+}

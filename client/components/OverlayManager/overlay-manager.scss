@@ -1,0 +1,82 @@
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  z-index: 99999;
+}
+
+.overlay--filled {
+  background-color: rgba(88, 86, 86, 0.85);
+}
+
+.modal-container--centered {
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.modal {
+  @include card();
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+  position: relative;
+  & .modal__heading__title {
+    margin: 0;
+    font-size: 18px;
+  }
+  & .modal__footer {
+    display: flex;
+    & .modal__footer__right {
+      flex: 1;
+      text-align: right;
+    }
+  }
+  &.modal--sm {
+    width: 440px;
+    position: relative;
+    top: -120px;
+  }
+  &.modal--md {
+    width: 660px;
+    position: relative;
+    top: -120px;
+  }
+  & .modal__close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+    outline: none;
+    height: 32px;
+    width: 32px;
+    padding: 0;
+    border: none;
+    color: $grey;
+    & .modal__close-button__icon {
+      height: 18px;
+      width: 18px;
+    }
+    &:hover {
+      cursor: pointer;
+      & .modal__close-button__icon {
+        height: 22px;
+        width: 22px;
+      }
+    }
+  }
+  & .modal__helper-text {
+    font-size: 0.8em;
+    color: lighten($text-color, 15);
+  }
+}

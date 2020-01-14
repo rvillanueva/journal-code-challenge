@@ -1,0 +1,27 @@
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+
+.close-button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  padding-top: 3px;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  color: $dark-grey;
+  &:hover {
+    background-color: $lighter-grey;
+    cursor: pointer;
+  }
+}
+
+.address-input {
+  & input {
+    @include simple-input();
+  }
+}

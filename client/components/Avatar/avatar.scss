@@ -1,0 +1,24 @@
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+
+.avatar {
+  border-radius: 50%;
+  border: 1px solid $lightest-grey;
+  background-color: white;
+  color: white;
+  display: inline-block;
+  user-select: none;
+  text-decoration: none;
+  & .avatar__image {
+    width: 100%;
+  }
+  & .avatar__generated {
+    text-align: center;
+    position: relative;
+    left: 0.5px;
+  }
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

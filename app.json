@@ -1,0 +1,9 @@
+{
+  "name": "React Fullstack Starter App",
+  "website": "https://www.rvillanueva.co/",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
