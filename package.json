@@ -73,7 +73,7 @@
     "loaders.css": "0.1.2",
     "lodash": "^4.17.15",
     "lusca": "1.6.1",
-    "mathjs": "5.1.0",
+    "mathjs": "7.5.1",
     "method-override": "^2.3.5",
     "mixpanel": "^0.11.0",
     "moment": "2.22.0",
