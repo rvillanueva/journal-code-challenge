@@ -55,7 +55,7 @@
     "ejs": "2.6.1",
     "email-addresses": "3.0.3",
     "errorhandler": "^1.4.2",
-    "express": "4.16.4",
+    "express": "4.17.3",
     "express-jwt": "^5.0.0",
     "express-react-views": "0.11.0",
     "express-session": "^1.11.3",
