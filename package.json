@@ -69,7 +69,7 @@
     "inline-css": "2.4.0",
     "ioredis": "3.2.2",
     "js-cookie": "2.2.0",
-    "jsonwebtoken": "8.3.0",
+    "jsonwebtoken": "9.0.0",
     "loaders.css": "0.1.2",
     "lodash": "^4.17.15",
     "lusca": "1.6.1",
